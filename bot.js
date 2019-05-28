@@ -2262,39 +2262,6 @@ ${attentions[message.guild.id]['msg']}**`).then(msge => {
 
 	
 
-	client.on("message", msg => { 
-    if(msg.content.startsWith(prefix + "inv")){ 
-        let e = new Discord.RichEmbed() 
-        .setTitle("**اضافه البوت لسيرفرك**") 
-       .setDescription(`**📬 | اذا تريد البوت يرسلك الرابط بخاصك
-       📇 | اذا تريد البوت يرسلك الرابط هنا بالشات
-	      :heart: #شكرا لإطلاعك على هذه المعلومة#:heart:  **`)
-        msg.channel.send(e).then(b => {
-            b.react('📇')
-            .then(() => b.react('📬'))
-            .then(() =>b.react('📇'))
-            let reaction1Filter = (reaction, user) => reaction.emoji.name === '📇' && user.id === msg.author.id;
-let reaction2Filter = (reaction, user) => reaction.emoji.name === '📬' && user.id === msg.author.id;
-
-let reaction1 = b.createReactionCollector(reaction1Filter, { time: 12000 });
-let reaction2 = b.createReactionCollector(reaction2Filter, { time: 12000 });
-reaction1.on("collect", r => {
-msg.reply(`https://discordapp.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=0&scope=bot`)
-b.delete(2000)
-})
-reaction2.on("collect", r => {
-    msg.author.send(`${msg.author} https://discordapp.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=0&scope=bot`)
-    b.delete(2000)
-    msg.reply("**تم ارسال الرابط في خاصك 📬**").then(d => {
-        d.delete(2000)
-    })
-    })
-        })
-    }
-});
-
-
-
 client.on('message', function(msg) {
   if(msg.content.startsWith ('-server')) {
     if(!msg.channel.guild) return msg.reply('**:x: اسف لكن هذا الامر للاداره فقط**');         
@@ -3702,7 +3669,6 @@ reaction1.on("collect", r => {
 『-embed ====> يكرر الي تقولو بشكل حلو
 『-rules ====> يعرض لك قوانين السيرفر
 『-v2min ====> لصنع روم صوتي مؤقت
-『-inv ====> لدعوة البوت الى سيرفرك
 **
 `)
    message.author.sendEmbed(embed)
