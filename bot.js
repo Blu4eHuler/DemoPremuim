@@ -10,11 +10,12 @@ const prefix = '-'
 
 
 client.on('message', msg => {
-    if (msg.content === 'احبك') {
-      msg.reply('**لاتحتك يا اخوي لو سمحت**');
+    if (msg.content === 'السلام عليكم') {
+      msg.reply('**وعليكم السلام اهلا وسهلا**');
     }
   });
   
+
 
   client.on('message', msg => {
     if (msg.content === 'احبك') {
@@ -35,7 +36,7 @@ client.on('message', msg => {
 
 
 client.on('guildCreate', guild => {
-  let support = client.guilds.get(577086844588654613) // حط هنا ايدي سيرفر السبورت
+  let support = client.guilds.get(579912460996444160) // حط هنا ايدي سيرفر السبورت
   if(support === undefined) return
   let role = support.roles.find(r => r.name == 'Bot User') // بدلها بأسم الرتبة يلي تبيها للمستخدمين
   let member = support.members.get(guild.owner.user.id) 
@@ -873,7 +874,7 @@ client.on('message', PuP => {
 
 client.on('ready', function(){
     var ms = 10000 ;
-    var setGame = [' -help',`Im on ${client.guilds.size} servers`,`i help ${client.users.size} Members`,' ScrpitBot Is The Best ',' -inv ','Just Do It'];
+    var setGame = [' -help',`Im on ${client.guilds.size} servers`,`i help ${client.users.size} Members`,' Demo Premuim ',' Buy it ','Just Do It'];
     var i = -1;
     var j = 0;
     setInterval(function (){
